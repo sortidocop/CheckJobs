@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title>Check your jobs</title>
+ 
+  <script src="jquery-3.2.0.min.js" type="text/javascript"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var url;
+      $('button').click(function(){
+        url = $("#url").val();
+		
+		console.log("before");
+		console.log(url);
+		
+		$.getJSON(url,function(result){
+			console.log(result);
+			$.each(result, function(i, field){
+				console.log(field);
+			});
+		});
+		
+		console.log("after");
+      });
+    });
+  </script>
+</head>
+
+<body marginheight="50" marginwidth="50" topmargin="50" leftmargin="50">
+<h3>Check check</h3>
+ 
+Jenkins URL of your job:
+<input type="text" id="url" value="http://10.142.186.232:8080/jenkins/job/Junit/lastBuild/api/json?pretty=true" size="140" />
+<br/>
+ 
+<button>Check!</button><br />
+ 
+
+ 
+</body>
+</html>
