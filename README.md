@@ -11,7 +11,6 @@ And add in Apache config file:
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin: *
 </IfModule>
-</code>
 ```
 
 The result is not implemented yet, the console.log result on javascript console.
